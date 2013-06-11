@@ -1,4 +1,6 @@
 Ebrickandmortar::Application.routes.draw do
+  resources :pages
+
   resources :stores
 
   # The priority is based upon order of creation: first created -> highest priority.
