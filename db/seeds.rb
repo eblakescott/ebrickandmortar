@@ -24,3 +24,11 @@ pages = Page.create([
   { title: 'Welcome', content: %{ This is the home page. } },
   { title: 'About', content: %{ This is the about page. } }
   ])
+
+# Sample stores below
+
+store = Store.create({title: 'Planetarium', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'planetarium.jpg'})
+
+store = Store.create({title: 'Field Museum', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'field_museum_2.jpg'})
+
+store = Store.create({title: 'Shedd Aquarium', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'shedd_aquarium.jpg'})

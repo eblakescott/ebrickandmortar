@@ -1,6 +1,6 @@
 <h1>Listing stores</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -19,7 +19,7 @@
         <td><%= store.title %></td>
         <td><%= store.description %></td>
         <td><%= store.address %></td>
-        <td><%= store.image_url %></td>
+        <td><%= image_tag(store.image_url) %></td>
         <td><%= link_to 'Show', store %></td>
         <td><%= link_to 'Edit', edit_store_path(store) %></td>
         <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
