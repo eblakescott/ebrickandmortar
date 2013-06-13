@@ -1,4 +1,5 @@
 Ebrickandmortar::Application.routes.draw do
+  get "shop/index"
   resources :pages
 root :to => 'pages#welcome' # map / to the custom welcome action of the pages controller
 
