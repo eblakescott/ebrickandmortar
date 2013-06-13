@@ -13,4 +13,7 @@
  *= require_pages 
  *= require_stores
  *= require_shop
+ *= require_products
+ *= require_carts
+ *= require_line_items
 */
