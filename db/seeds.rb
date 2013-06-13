@@ -28,15 +28,23 @@ pages = Page.create([
 # Sample stores below
 
 store = Store.create({title: 'Planetarium', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'saucony.png'})
+products = store.products.create([
+  { title: 'CoffeeScript',
+    description: 
+    %{<p>
+        CoffeeScript is JavaScript done right. It provides all of JavaScript's
+	functionality wrapped in a cleaner, more succinct syntax. In the first
+	book on this exciting new language, CoffeeScript guru Trevor Burnham
+	shows you how to hold onto all the power and flexibility of JavaScript
+	while writing clearer, cleaner, and safer code.
+      </p>},
+  image_url:   'saucony.png',    
+  price: 36.00}])
+
 
 store = Store.create({title: 'Field Museum', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'saucony.png'})
-
-store = Store.create({title: 'Shedd Aquarium', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'saucony.png'})
-
-#Seed data for products below
-
-Product.delete_all
-Product.create(title: 'CoffeeScript',
+products = store.products.create([
+  { title: 'CoffeeScript',
   description: 
     %{<p>
         CoffeeScript is JavaScript done right. It provides all of JavaScript's
@@ -46,29 +54,20 @@ Product.create(title: 'CoffeeScript',
 	while writing clearer, cleaner, and safer code.
       </p>},
   image_url:   'saucony.png',    
-  price: 36.00)
-# . . .
-Product.create(title: 'Programming Ruby 1.9 & 2.0',
-  description:
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
-        out there. If you need to get working programs delivered fast,
-        you should add Ruby to your toolbox.
-      </p>},
-  image_url: 'saucony.png',
-  price: 49.95)
-# . . .
+  price: 36.00}])
 
-Product.create(title: 'Rails Test Prescriptions',
+store = Store.create({title: 'Shedd Aquarium', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'saucony.png'})
+products = store.products.create([
+  { title: 'CoffeeScript',
   description: 
     %{<p>
-        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
-        Rails applications, covering Test-Driven Development from both a
-        theoretical perspective (why to test) and from a practical perspective
-        (how to test effectively). It covers the core Rails testing tools and
-        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
-        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+        CoffeeScript is JavaScript done right. It provides all of JavaScript's
+	functionality wrapped in a cleaner, more succinct syntax. In the first
+	book on this exciting new language, CoffeeScript guru Trevor Burnham
+	shows you how to hold onto all the power and flexibility of JavaScript
+	while writing clearer, cleaner, and safer code.
       </p>},
-  image_url: 'saucony.png',
-  price: 34.95)
+  image_url:   'saucony.png',    
+  price: 36.00}])
+#Seed data for products below
 

@@ -9,8 +9,10 @@ Ebrickandmortar::Application.routes.draw do
   resources :pages
 root :to => 'pages#welcome' # map / to the custom welcome action of the pages controller
 
-
-  resources :stores
+#Set Products as nested resource of Stores
+  resources :stores do
+    resources :products
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
