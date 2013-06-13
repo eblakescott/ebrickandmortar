@@ -1,17 +1,24 @@
-<h1>Your Local Marketplace</h1>
-<br>
-<table class="table">
-  <thead></thead>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
 
-  <tbody>
-    <% @stores.each do |store| %>
-      <tr>
-        <td><%= image_tag(store.image_url) %></td>
-        <td><%= store.title %></td>
-        <td><%= store.description %></td>
-        <td><%= store.address %></td>
-        <td><%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %></td>
-      </tr>
+<h1>Your Local Marketplace</h1>
+
+<% cache ['store', Product.latest] do %>
+  <% @products.each do |product| %>
+    <% cache ['entry', product] do %>
+      <div class="entry">
+        <%= image_tag(product.image_url) %>
+        <h3><%= product.title %></h3>
+        <%= sanitize(product.description) %>
+        <div class="price_line">
+          <span class="price"><%= number_to_currency(product.price) %></span>
+<!-- START_HIGHLIGHT -->
+          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+<!-- END_HIGHLIGHT -->
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+<% end %>
+
