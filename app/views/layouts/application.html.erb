@@ -16,12 +16,19 @@
   </div>  
   <div class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="#">Title</a>
       <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li><%= link_to "Home", root_url %></li> 
+          <li class="active"><%= link_to "Shop", shop_index_path %></li>
+   
           <li><a href="#">Link</a></li>
           <li><a href="#">Link</a></li>
-      </ul>
+      <li><%= form_tag stores_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
+  </p>
+  <% end %></li>
+    </ul>
     </div>
   </div>
 
