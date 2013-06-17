@@ -9,7 +9,6 @@
       <th>Image url</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -20,7 +19,7 @@
         <td><%= store.description %></td>
         <td><%= store.address %></td>
         <td><%= image_tag(store.image_url) %></td>
-        <td><%= link_to 'Show', store %></td>
+        <td><%= link_to 'Select', store %></td>
         <td><%= link_to 'Edit', edit_store_path(store) %></td>
         <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
