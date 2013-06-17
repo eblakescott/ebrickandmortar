@@ -1,12 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @store.title %>
+  <strong></strong>
+  <%= image_tag(@store.image_url) %>
+</p>
+
+
+<p>
+  <strong></strong>
+  <strong><%= @store.title %></strong>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong></strong>
   <%= @store.description %>
 </p>
 
@@ -15,10 +21,6 @@
   <%= @store.address %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @store.image_url %>
-</p>
 
 <p>
 <%= link_to 'Products', store_products_path(@store), class: "btn btn-large btn-block btn-primary" %>
