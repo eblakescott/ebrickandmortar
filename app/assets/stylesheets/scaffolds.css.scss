@@ -1,10 +1,15 @@
 body {
-  background-color: #fff;
+  background-color: #BE5B26;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
+
+div.container {
+background-color: #EEEEEE;
+background-image:url('bricks.jpg');
+background-repeat:repeat-x;}
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
