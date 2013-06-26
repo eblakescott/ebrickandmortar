@@ -39,6 +39,9 @@ end
 #Devise for user registration, authentication, and sessions
 gem 'devise'
 
+#Use old "attr_accessible" method for models for now
+gem 'strong_parameters'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
