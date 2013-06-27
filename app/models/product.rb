@@ -8,8 +8,8 @@
 #---
 class Product < ActiveRecord::Base
   has_many :line_items
-
   before_destroy :ensure_not_referenced_by_any_line_item
+  attr_accessible :title, :description, :image_url, :price  
 
   #...
 
@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
     with:    %r{\.(gif|jpg|png)\Z}i,
     message: 'must be a URL for GIF, JPG or PNG image.'
   }
-  validates :title, length: {minimum: 10}
+  
 
   def self.latest
     Product.order(:updated_at).last

@@ -40,10 +40,10 @@ class ProductTest < ActiveSupport::TestCase
     Product.new(title:       "My Book Title",
                 description: "yyy",
                 price:       1,
-                image_url:   image_url)
+                image_url:   "image_url")
   end
 
-  test "image url" do
+  test "image_url" do
     ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
              http://a.b.c/x/y/z/fred.gif }
     bad = %w{ fred.doc fred.gif/more fred.gif.more }
