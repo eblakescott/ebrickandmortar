@@ -1,4 +1,6 @@
 Ebrickandmortar::Application.routes.draw do
+  resources :orders
+
   devise_for :users
   resources :line_items
 
