@@ -11,7 +11,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Your Pragmatic Catalog</h1>
+<h1><%= @store.title %> Products</h1>
 
 <% cache ['store', Product.latest] do %>
   <% @store.products.each do |product| %>
