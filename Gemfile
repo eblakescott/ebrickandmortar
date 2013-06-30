@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
-#Specify Ruby version for Heroku deployment
-ruby "2.0.0"
-
 #Use Postgre db for Heroku deployment
 gem 'pg'
 
@@ -18,8 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# Use bootstrap-sass-rails
-##See details at https://github.com/yabawock/bootstrap-sass-rails 
+# Use bootstrap-sass-rails; see details at https://github.com/yabawock/bootstrap-sass-rails 
 gem 'bootstrap-sass-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
