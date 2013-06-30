@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
+#Specify Ruby version for Heroku deployment
+ruby "2.0.0"
+
 #Use Postgre db for Heroku deployment
 gem 'pg'
 
