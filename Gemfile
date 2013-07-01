@@ -12,6 +12,9 @@ gem 'pg'
 #Required for rails 4 to work with Heroku; see https://devcenter.heroku.com/articles/rails-integration-gems
 gem 'rails_12factor'
 
+#Elastic Search
+gem 'elastic_searchable'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
 

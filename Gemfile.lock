@@ -27,6 +27,9 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.9)
+    backgrounded (2.1.0)
+      activerecord (>= 2.3.10)
+      activesupport (>= 2.3.10)
     bcrypt-ruby (3.0.1)
     bootstrap-sass-rails (2.3.2.0)
       railties (>= 3.1.0)
@@ -43,10 +46,18 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
+    elastic_searchable (3.0.2)
+      activerecord (>= 3.0.5)
+      backgrounded (>= 2.0.0)
+      httparty (>= 0.6.0)
+      multi_json (>= 1.0.0)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.4)
     jbuilder (1.0.2)
       activesupport (>= 3.0.0)
@@ -60,6 +71,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.4)
     multi_json (1.7.6)
+    multi_xml (0.5.4)
     orm_adapter (0.0.7)
     pg (0.15.1)
     polyglot (0.3.3)
@@ -130,6 +142,7 @@ DEPENDENCIES
   bootstrap-sass-rails
   coffee-rails (~> 4.0.0)
   devise
+  elastic_searchable
   jbuilder (~> 1.0.1)
   jquery-rails
   pg

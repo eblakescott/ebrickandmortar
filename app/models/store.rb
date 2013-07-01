@@ -4,9 +4,9 @@ attr_accessible :title, :description, :image_url, :address
 
 def self.search(search)
   if search
-    where('title ILIKE ? OR description ILIKE ? OR address ILIKE ?', "%#{search}%", "%#{search}%")
+    where('title ILIKE ? OR description ILIKE ? OR address ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
   else
-    all
+    scoped
   end
 end
 end
