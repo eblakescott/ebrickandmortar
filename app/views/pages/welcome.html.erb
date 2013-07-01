@@ -3,6 +3,12 @@
   <div class="hero-unit">
     <h1>Ebrickandmortar</h1>
       <h2>Shop your local stores online.</h2>
+<%= form_tag stores_path, class: "form-search", :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
+  </p>
+  <% end %>
         <form class="form-search">
           <div class="control-group">
             <label class="control-label" for="inputZip">Please enter zipcode</label>

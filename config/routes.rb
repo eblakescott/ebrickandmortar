@@ -1,4 +1,5 @@
 Ebrickandmortar::Application.routes.draw do
+  devise_for :admins
   resources :orders
 
   devise_for :users
