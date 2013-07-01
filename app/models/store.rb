@@ -6,7 +6,7 @@ def self.search(search)
   if search
     where('title ILIKE ? OR description ILIKE ? OR address ILIKE ?', "%#{search}%", "%#{search}%")
   else
-    scoped
+    all
   end
 end
 end
