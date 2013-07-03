@@ -4,18 +4,26 @@
 
 <h1>Your Local Marketplace</h1>
 
-<% cache ['store', Product.latest] do %>
-  <% @products.each do |product| %>
-    <% cache ['entry', product] do %>
-      <div class="entry">
-        <%= image_tag(product.image_url) %>
-        <h3><%= product.title %></h3>
-        <%= sanitize(product.description) %>
-        <div class="price_line">
-          <span class="price"><%= number_to_currency(product.price) %></span>
-        </div>
-      </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Store</th>
+      <th>Description</th>
+      <th>Address</th>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= image_tag(store.image_url) %></td>
+        <td><%= store.title %></td>
+        <td><%= store.description %></td>
+        <td><%= store.address %></td>
+        <td><%= link_to 'Select', store %></td>
+       </tr>
     <% end %>
-  <% end %>
-<% end %>
+  </tbody>
+</table>
 

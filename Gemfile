@@ -15,6 +15,8 @@ gem 'rails_12factor'
 #Elastic Search
 gem 'elastic_searchable'
 
+gem 'tire'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
 

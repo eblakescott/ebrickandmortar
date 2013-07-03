@@ -1,25 +1,23 @@
 <!--This view is rendered for the welcome action on the Pages controller-->
 <body>
   <div class="hero-unit">
-    <h1>Ebrickandmortar</h1>
+    <!--<h1>Ebrickandmortar</h1>-->
       <h2>Shop your local stores online</h2>
   <fieldset>
 <%= form_tag stores_path, class: "form-search", :method => 'get' do %>
   <div>
     <%= label_tag "Please enter your zip code" %>
     <%= text_field_tag :search, params[:search], placeholder: "e.g., 60616" %>
-    <% end %>
     </div>
-<%= form_tag stores_path, class: "form-search", :method => 'get' do %>
-    <div>
+   <div>
     <%= label_tag "Search for products (optional)" %>
     <%= text_field_tag :search, params[:search], placeholder: "e.g., Mizuno Wave" %>
     </div>
-  <% end %>
 </br>
 <div>
     <%= submit_tag "Search!", :name => nil, class: 'btn btn-large btn-block btn-primary' %>
   </div>
+  <% end %>
   </fieldset>
 
 <!--        <form class="form-search">
