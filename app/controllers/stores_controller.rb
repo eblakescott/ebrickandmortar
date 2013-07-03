@@ -4,15 +4,20 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.search(params)
+    @stores = Store.search(params[:search])
   end
 
   # GET /stores/1
   # GET /stores/1.json
   def show
-  @store = Store.find(params[:id])
-  @product = Product.new(store_id: @store.id)
+    @store = Store.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @store }
+    end
   end
+
 
   # GET /stores/new
   def new
