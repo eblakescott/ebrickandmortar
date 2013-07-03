@@ -2,11 +2,12 @@ class Store < ActiveRecord::Base
 has_many :products, dependent: :destroy
 attr_accessible :title, :description, :image_url, :address
 
-def self.search(search)
-  if search
-    where('title ILIKE ? OR description ILIKE ? OR address ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
-  else
-    scoped
+include Tire::Model::Search
+include Tire::Model::Callbacks
+
+def self.search(params)
+  tire.search(load: true) do
+    query { string params[:query] } if params[:query].present?
   end
 end
 end

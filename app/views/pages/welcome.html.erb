@@ -20,21 +20,14 @@
   <% end %>
   </fieldset>
 
-<!--        <form class="form-search">
-          <div class="control-group">
-            <label class="control-label" for="inputZip">Please enter zipcode</label>
-            <div class="controls">
-              <input type="text" class="input-medium search-query" placeholder="e.g., 60660">
-            </div>
-          </div>
-          <h3>Or</h3>
-          <div class="control-group">
-            <label class="control-label" for="inputStoreName">Search for locally owned stores</label>
-            <div class="controls">
-              <input type="text" class="input-medium search-query" placeholder="e.g., Golden Legs Running">
-            </div>
-          </div>  
-          <button type="submit" class="btn btn-primary btn-large">Search stores &raquo;</button>
-        </form> -->     
-  </div>
+
+
+<%= form_tag stores_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+
 </body>
