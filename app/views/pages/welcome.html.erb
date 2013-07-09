@@ -8,26 +8,18 @@
   <div>
     <%= label_tag "Please enter your zip code" %>
     <%= text_field_tag :search, params[:search], placeholder: "e.g., 60616" %>
-    </div>
-   <div>
-    <%= label_tag "Search for products (optional)" %>
-    <%= text_field_tag :search, params[:search], placeholder: "e.g., Mizuno Wave" %>
-    </div>
-</br>
-<div>
-    <%= submit_tag "Search!", :name => nil, class: 'btn btn-large btn-block btn-primary' %>
+    <%= submit_tag "Search!", :name => nil, class: 'btn btn-large btn-primary' %>
   </div>
   <% end %>
   </fieldset>
-
-
-
-<%= form_tag stores_path, method: :get do %>
-  <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
-  </p>
-<% end %>
-
+<fieldset>
+<%= form_tag products_path, class: "form-search", :method => 'get' do %>
+  <div>
+    <%= label_tag "Search for a product" %>
+    <%= text_field_tag :search, params[:search], placeholder: "e.g., 60616" %>
+    <%= submit_tag "Search!", :name => nil, class: 'btn btn-large btn-primary' %>
+  </div>
+  <% end %>
+  </fieldset>
 
 </body>

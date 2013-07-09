@@ -7,6 +7,7 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 class Product < ActiveRecord::Base
+  belongs_to :stores
   has_many :line_items
   has_many :orders, through: :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
@@ -24,6 +25,7 @@ class Product < ActiveRecord::Base
     message: 'must be a URL for GIF, JPG or PNG image.'
   }
   
+validates :store_id, presence: true
 
   def self.latest
     Product.order(:updated_at).last
@@ -40,9 +42,10 @@ class Product < ActiveRecord::Base
         return false
       end
     end
+
 def self.search(search)
   if search
-    where('title ILIKE ? OR description ILIKE ? OR address ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+    where('title ILIKE ? OR description ILIKE ?', "%#{search}%", "%#{search}%")
   else
     scoped
   end

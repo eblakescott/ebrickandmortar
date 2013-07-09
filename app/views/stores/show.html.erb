@@ -21,8 +21,29 @@
 </p>
 
 
-<p>
-<%= link_to 'Browse Products', store_products_path(@store), class: "btn btn-large btn-block btn-primary" %>
-</p>
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %> |
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Image url</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+<br />
+  <tbody>
+    <h3>Products</h3>
+    <% @store.products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= image_tag(product.image_url) %></td>
+        <td><%= link_to 'Select', product %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
