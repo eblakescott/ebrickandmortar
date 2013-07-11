@@ -17,6 +17,8 @@ gem 'elastic_searchable'
 
 gem 'tire'
 
+gem 'activemerchant', '~> 1.34.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
 
@@ -47,7 +49,7 @@ group :doc do
 end
 
 #Devise for user registration, authentication, and sessions
-gem 'devise'
+gem 'devise' 
 
 gem 'protected_attributes'
 

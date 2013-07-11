@@ -37,6 +37,12 @@
                   prompt: 'Select a payment method' %>
 <!-- END_HIGHLIGHT -->
   </div>
+<div class="field">
+    <%= f.label :credit_card_number %><br>
+<!-- START_HIGHLIGHT -->
+    <%= f.number_field :credit_card_number, size: 16 %>
+<!-- END_HIGHLIGHT -->
+  </div>
   <div class="actions">
 <!-- START_HIGHLIGHT -->
     <%= f.submit 'Place Order' %>
