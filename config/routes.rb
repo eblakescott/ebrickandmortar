@@ -10,18 +10,15 @@ Ebrickandmortar::Application.routes.draw do
 
   resources :carts
 
-  resources :products
+ 
 
   get "shop/index"
   resources :pages
 root :to => 'pages#welcome' # map / to the custom welcome action of the pages controller
 
-#Set Products as nested resource of Stores
-  resources :stores
-
-  resources :products do
-      get :who_bought, on: :member
-    end
+  resources :stores do
+	resources :products
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

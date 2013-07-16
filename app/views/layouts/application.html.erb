@@ -14,7 +14,7 @@
  
 <!--<div class="banner"><%= link_to(image_tag("bricks.jpg"), root_url) %></div>-->
   <div class="page-header">
-    <h1>EBrickandMortar <small>Shop locally on the web</small></h1>
+    <%= link_to(raw("<h1>EBrickandMortar <small>Shop locally on the web</small></h1>"), root_url) %>
  <!-- <%= form_tag stores_path, class: "form-search", :method => 'get' do %>
    <fieldset>
    <div>
@@ -26,11 +26,11 @@
   <% end %>-->
 <p>Store administrators:</p>
 <div id="member_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% if admin_signed_in? %>
+    Signed in as <%= current_admin.email %>. Not you?
+    <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+    <%= link_to "Sign up", new_admin_registration_path %> or <%= link_to "sign in", new_admin_session_path %>
   <% end %>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>

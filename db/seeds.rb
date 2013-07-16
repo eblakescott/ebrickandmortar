@@ -70,3 +70,7 @@ products = Product.create([
       </p>},
   image_url:   'saucony.png',    
   price: 36.00}])
+
+#Create an admin account
+Admin.new({ :email => 'ed@ed.com', :password => 'Edward', :password_confirmation => 'Edward'}).save
+

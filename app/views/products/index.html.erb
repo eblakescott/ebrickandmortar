@@ -1,33 +1,35 @@
+<h1>Listing Products for </h1>
 
-<h1>Listing products</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Address</th>
+      <th>Image url</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<table>
-<% @products.each do |product| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-
-    <td>
-      <%= image_tag(product.image_url, class: 'list_image') %>
-    </td>
-
-    <td class="list_description">
-      <dl>
-        <dt><%= product.title %></dt>
-        <dd><%= truncate(strip_tags(product.description),
-               length: 80) %></dd>
-      </dl>
-    </td>
-
-    <td class="list_actions">
-      <%= link_to 'Show', product %><br/>
-      <%= link_to 'Edit', edit_product_path(product) %><br/>
-      <%= link_to 'Destroy', product, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @store.product.each do |store| %>
+      <tr>
+        <td><%= store.title %></td>
+        <td><%= store.description %></td>
+        <td><%= store.address %></td>
+        <td><%= image_tag(store.image_url) %></td>
+        <td><%= link_to 'Select', store %></td>
+        <% if admin_signed_in? %>
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+     </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New product', new_product_path %>
-
+<br>
+<% if admin_signed_in? %>
+<%= link_to 'New Store', new_store_path %>
+<% end %>

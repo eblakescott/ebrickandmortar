@@ -41,9 +41,15 @@
         <td><%= product.description %></td>
         <td><%= product.price %></td>
         <td><%= image_tag(product.image_url) %></td>
-        <td><%= link_to 'Select', product %></td>
-        </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        <td><%= link_to 'Select', store_product_path(@store, product) %></td>
+        <% if admin_signed_in? %>
+        <td><%= link_to 'Edit', edit_store_product_path(@store, product) %></td>
+        <td><%= link_to 'Destroy', [@store, product], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+  <%= link_to 'Add New Product', new_store_product_path(@store, product) %>
+</div>
+<% end %>
+<% end %>
