@@ -16,8 +16,10 @@ Ebrickandmortar::Application.routes.draw do
   resources :pages
 root :to => 'pages#welcome' # map / to the custom welcome action of the pages controller
 
+resources :products, :only => [:destroy, :update]
+
   resources :stores do
-	resources :products
+	resources :products, :only => [:create, :edit, :index, :new, :show]
   end
 
 

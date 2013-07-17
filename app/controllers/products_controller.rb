@@ -18,13 +18,13 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
+    @product = @store.products.build
   end
 
   # GET /products/1/edit
   def edit
   @product = @store.products.find(params[:id])
-
+  @product = @store.products.build(params[:product])
   end
 
   # POST /products
@@ -35,7 +35,7 @@ def create
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to store_products_path(@store), notice: 'Product was successfully created.' }
+        format.html { redirect_to [@store, @photo], notice: 'Product was successfully created.' }
         #format.json { render json: @wait, status: :created, location: @wait }
       else
         #format.html { render action: "new" }

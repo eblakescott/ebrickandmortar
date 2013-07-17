@@ -45,11 +45,13 @@
         <% if admin_signed_in? %>
         <td><%= link_to 'Edit', edit_store_product_path(@store, product) %></td>
         <td><%= link_to 'Destroy', [@store, product], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    </tbody>
+    <% end %>  
+    </tr>
+   <% end %> 
+   </tbody>
   </table>
+ <% if admin_signed_in? %>
 <div>
-  <%= link_to 'Add New Product', new_store_product_path(@store, product) %>
+  <%= link_to 'Add New Product', new_store_product_path(@store) %>
 </div>
-<% end %>
 <% end %>
