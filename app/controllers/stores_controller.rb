@@ -11,7 +11,7 @@ class StoresController < ApplicationController
   # GET /stores/1.json
   def show
     @store = Store.find(params[:id])
-    @products = @store.products
+    @shoes = @store.shoes
     
     respond_to do |format|
       format.html # show.html.erb
