@@ -11,13 +11,12 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
+  <%= image_tag(@product.image_url) %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @product.price %>
+  $<%= @product.price %>
 </p>
 
 <%= button_to 'Add to Cart', line_items_path(product_id: @product)%>

@@ -27,7 +27,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Price</th>
-      <th>Image url</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -39,7 +39,7 @@
       <tr>
         <td><%= product.title %></td>
         <td><%= product.description %></td>
-        <td><%= product.price %></td>
+        <td>$<%= product.price %></td>
         <td><%= image_tag(product.image_url) %></td>
         <td><%= link_to 'Select', store_product_path(@store, product) %></td>
         <% if admin_signed_in? %>
@@ -50,6 +50,7 @@
    <% end %> 
    </tbody>
   </table>
+<%= link_to 'Shoes', store_shoes_path(@store) %>
  <% if admin_signed_in? %>
 <div>
   <%= link_to 'Add New Product', new_store_product_path(@store) %>

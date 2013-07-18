@@ -1,5 +1,5 @@
 Ebrickandmortar::Application.routes.draw do
- 
+
   resources :shops
 
   devise_for :admins
@@ -18,10 +18,15 @@ root :to => 'pages#welcome' # map / to the custom welcome action of the pages co
 
 resources :products, :only => [:destroy, :update]
 
-  resources :stores do
-	resources :products, :only => [:create, :edit, :index, :new, :show]
+resources :shoes, :only => [:destroy, :update]
+  
+resources :stores do
+    resources :products, :only => [:create, :edit, :index, :new, :show]
   end
 
+resources :stores do
+  resources :shoes, :only => [:create, :edit, :index, :new, :show]
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

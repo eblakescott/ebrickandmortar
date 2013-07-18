@@ -1,0 +1,36 @@
+<h1>Listing shoes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th>Price</th>
+      <th>Mens or Womens</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @store.shoes.each do |shoe| %>
+      <tr>
+        <td><%= shoe.title %></td>
+        <td><%= shoe.description %></td>
+        <td><%= image_tag(shoe.image_url) %></td>
+        <td><%= shoe.price %></td>
+        <td><%= shoe.sex %></td>
+        <td><%= link_to 'Show', shoe %></td>
+        <td><%= link_to 'Edit', edit_store_shoe_path(@store, shoe) %></td>
+        <td><%= link_to 'Destroy', [@store, shoe], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shoe', new_store_shoe_path(@store) %>

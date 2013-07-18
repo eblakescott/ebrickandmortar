@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
  def index
-    @products = Product.search(params[:search])
+    @products = @store.product.search(params[:search])
     @products = Product.all
     @products = @store.products.all
   end
@@ -35,7 +35,7 @@ def create
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to [@store, @photo], notice: 'Product was successfully created.' }
+        format.html { redirect_to [@store, @product], notice: 'Product was successfully created.' }
         #format.json { render json: @wait, status: :created, location: @wait }
       else
         #format.html { render action: "new" }
