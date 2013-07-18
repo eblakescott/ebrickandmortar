@@ -23,7 +23,7 @@
         <td><%= image_tag(shoe.image_url) %></td>
         <td><%= shoe.price %></td>
         <td><%= shoe.sex %></td>
-        <td><%= link_to 'Show', shoe %></td>
+        <td><%= link_to 'Show', store_shoe_path(@store, shoe) %></td>
         <td><%= link_to 'Edit', edit_store_shoe_path(@store, shoe) %></td>
         <td><%= link_to 'Destroy', [@store, shoe], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

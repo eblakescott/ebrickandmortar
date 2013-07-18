@@ -1,12 +1,12 @@
 class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
-  def add_product(product_id)
-    current_item = line_items.find_by(product_id: product_id)
+  def add_shoe(shoe_id)
+    current_item = line_items.find_by(shoe_id: shoe_id)
     if current_item
       current_item.quantity += 1
     else
-      current_item = line_items.build(product_id: product_id)
+      current_item = line_items.build(shoe_id: shoe_id)
     end
     current_item
   end
@@ -26,7 +26,7 @@ def paypal_url(return_url)
   line_items.each_with_index do |item, index|
     values.merge!({
       "amount_#{index+1}" => item.total_price,
-      "item_name_#{index+1}" => item.product.title,
+      "item_name_#{index+1}" => item.shoe.title,
       "item_number_#{index+1}" => item.id,
       "quantity_#{index+1}" => item.quantity
     })

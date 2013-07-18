@@ -34,43 +34,6 @@ store = Store.create({title: 'Field Museum', description: %{The Adler Planetariu
 
 store = Store.create({title: 'Shedd Aquarium', description: %{The Adler Planetarium & Astronomy Museum in Chicago, Illinois was the first planetarium built in the Western Hemisphere and is the oldest in existence today. Adler was founded and built in 1930 by the philanthropist Max Adler, with the assistance of the first director of the planetarium, Philip Fox. The Adler Planetarium opened to the public on May 12, 1930.}, address: '2201 Museum campus, Chicago, IL 60616', image_url: 'saucony.png'})
 
-#Seed data for products below
-
-products = Product.create([
-  { title: 'Saucony',
-    description: 
-    %{<p>
-        These shoes will blow your competitors away!
-      </p>},
-  image_url:   'saucony.png',    
-  price: 87.00}])
-
-products = Product.create([
-  { title: 'CoffeeScript',
-  description: 
-    %{<p>
-        CoffeeScript is JavaScript done right. It provides all of JavaScript's
-	functionality wrapped in a cleaner, more succinct syntax. In the first
-	book on this exciting new language, CoffeeScript guru Trevor Burnham
-	shows you how to hold onto all the power and flexibility of JavaScript
-	while writing clearer, cleaner, and safer code.
-      </p>},
-  image_url:   'saucony.png',    
-  price: 36.00}])
-
-products = Product.create([
-  { title: 'CoffeeScript',
-  description: 
-    %{<p>
-        CoffeeScript is JavaScript done right. It provides all of JavaScript's
-	functionality wrapped in a cleaner, more succinct syntax. In the first
-	book on this exciting new language, CoffeeScript guru Trevor Burnham
-	shows you how to hold onto all the power and flexibility of JavaScript
-	while writing clearer, cleaner, and safer code.
-      </p>},
-  image_url:   'saucony.png',    
-  price: 36.00}])
-
 #Create an admin account
 Admin.new({ :email => 'ed@ed.com', :password => 'Edward', :password_confirmation => 'Edward'}).save
 

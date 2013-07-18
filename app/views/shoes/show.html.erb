@@ -12,7 +12,7 @@
 
 <p>
   <strong>Image url:</strong>
-  <%= @shoe.image_url %>
+  <%= image_tag(@shoe.image_url) %>
 </p>
 
 <p>
@@ -30,5 +30,4 @@
   <%= @shoe.store_id %>
 </p>
 
-<%= link_to 'Edit', edit_shoe_path(@shoe) %> |
-<%= link_to 'Back', shoes_path %>
+<%= button_to 'Add to Cart', line_items_path(shoe_id: @shoe)%>
