@@ -50,7 +50,37 @@
    <% end %> 
    </tbody>
   </table>-->
-<%= link_to 'Shoes', store_shoes_path(@store) %>
+<br>
+<ul class="thumbnails">
+  <li class="span3">
+   <a href="1/shoes" class="thumbnail">
+    <%= image_tag("saucony.png", size: "150x113") %>
+    <h3>Shoes</h3>
+    <p>Thumbnail caption...</p>
+    </a>
+  </li>
+<li class="span3">
+   <a href="1/shoes" class="thumbnail">
+    <%= image_tag("saucony.png", size: "150x113") %>
+    <h3>Outerwear</h3>
+    <p>Thumbnail caption...</p>
+    </a>
+  </li>
+<li class="span3">
+   <a href="1/shoes" class="thumbnail">
+    <%= image_tag("saucony.png", size: "150x113") %>
+    <h3>Baselayers</h3>
+    <p>Thumbnail caption...</p>
+    </a>
+  </li>
+<li class="span3">
+   <a href="1/shoes" class="thumbnail">
+    <%= image_tag("saucony.png", size: "150x113") %>
+    <h3>Accessories</h3>
+    <p>Thumbnail caption...</p>
+    </a>
+  </li>
+</ul>
  <!--<% if admin_signed_in? %>
 <div>
   <%= link_to 'Add New Product', new_store_product_path(@store) %>
