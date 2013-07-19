@@ -7,6 +7,7 @@ class ShoesController < ApplicationController
   def index
     @shoes = Shoe.all
     @shoes = @store.shoes.all
+    @shoes = @store.shoes.search(params[:search])
   end
 
   # GET /shoes/1

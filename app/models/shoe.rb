@@ -9,6 +9,14 @@ def self.latest
     Shoe.order(:updated_at).last
   end
 
+def self.search(search)
+  if search
+    where('title ILIKE ? OR description ILIKE ?', "%#{search}%", "%#{search}%")
+  else
+    scoped
+  end
+end
+
   private
 
     # ensure that there are no line items referencing this shoe

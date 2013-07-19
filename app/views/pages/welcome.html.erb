@@ -6,21 +6,10 @@
   <fieldset>
 <%= form_tag stores_path, class: "form-search", :method => 'get' do %>
   <div>
-    <%= label_tag "Please enter your zip code" %>
-    <%= text_field_tag :search, params[:search], placeholder: "e.g., 60616" %>
+    <%= label_tag "Search by zip code, store name, or products" %>
+    <%= text_field_tag :search, params[:search], placeholder: "e.g., 60616, running shoes" %>
     <%= submit_tag "Search!", :name => nil, class: 'btn btn-large btn-primary' %>
   </div>
   <% end %>
   </fieldset>
-<h3>Or</h3>
-<fieldset>
-<%= form_tag store_products_path(@store), class: "form-search", :method => 'get' do %>
-  <div>
-    <%= label_tag "Search for a product, brand, or store" %>
-    <%= text_field_tag :search, params[:search], placeholder: "e.g., Mizuno Wave, Golden Legs Running" %>
-    <%= submit_tag "Search!", :name => nil, class: 'btn btn-large btn-primary' %>
-  </div>
-  <% end %>
-  </fieldset>
-
 </body>

@@ -10,32 +10,20 @@
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
- 
-<!--<div class="banner"><%= link_to(image_tag("bricks.jpg"), root_url) %></div>-->
-  <div class="page-header">
-    <%= link_to(raw("<h1>EBrickandMortar <small>Shop locally on the web</small></h1>"), root_url) %>
- <!-- <%= form_tag stores_path, class: "form-search", :method => 'get' do %>
-   <fieldset>
-   <div>
-   <%= label_tag "Please enter your address" %>
-    <%= text_field_tag :search, params[:search], placeholder: "e.g, 111 Main St., Chicago" %>
-    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
-    </div>
-    </fieldset>
-  <% end %>-->
-<p>Store administrators:</p>
-<div id="member_nav">
-  <% if admin_signed_in? %>
+<div class="alert alert-success">
+<% if admin_signed_in? %>
     Signed in as <%= current_admin.email %>. Not you?
     <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
   <% else %>
     <%= link_to "Sign up", new_admin_registration_path %> or <%= link_to "sign in", new_admin_session_path %>
   <% end %>
-<p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+<%= notice %></div>
 </div>
-</div>  
+<div class="container">
+  <div class="page-header">
+<%= link_to(raw("<h1>EBrickandMortar <small>Shop locally on the web</small></h1>"), root_url) %>  
+</div>
+
   <!--<div class="navbar">
     <div class="navbar-inner">
       <ul class="nav">
