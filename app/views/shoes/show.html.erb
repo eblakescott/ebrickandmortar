@@ -1,33 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @shoe.title %>
+ <strong><%= @shoe.title %></strong>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @shoe.description %>
+ <%= @shoe.description %>
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= image_tag(@shoe.image_url) %>
+ <%= image_tag(@shoe.image_url) %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @shoe.price %>
+  $<%= @shoe.price %>
 </p>
 
 <p>
-  <strong>Sex:</strong>
+  <strong>Mens or Womens:</strong>
   <%= @shoe.sex %>
 </p>
 
 <p>
   <strong>Store:</strong>
-  <%= @shoe.store_id %>
+  <%= @store.title %>
 </p>
 
 <%= button_to 'Add to Cart', line_items_path(shoe_id: @shoe)%>

@@ -3,10 +3,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Address</th>
-      <th>Image url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -15,10 +15,10 @@
   <tbody>
     <% @stores.each do |store| %>
       <tr>
-        <td><%= store.title %></td>
+        <td><%= image_tag(store.image_url) %></td>
+        <td><strong><%= store.title %></strong></td>
         <td><%= store.description %></td>
         <td><%= store.address %></td>
-        <td><%= image_tag(store.image_url) %></td>
         <td><%= link_to 'Select', store %></td>
         <% if admin_signed_in? %>
         <td><%= link_to 'Edit', edit_store_path(store) %></td>

@@ -4,22 +4,23 @@
 
 <!-- START_HIGHLIGHT -->
 <h2>Your Cart</h2>
-<table>
+<table class="table">
 <!-- END_HIGHLIGHT -->
   <% @cart.line_items.each do |item| %>
 <!-- START_HIGHLIGHT -->
     <tr>
+      <td><%= image_tag(item.shoe.image_url) %></td>
       <td><%= item.quantity %>&times;</td>
       <td><%= item.shoe.title %></td>
-      <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+      <td><%= number_to_currency(item.total_price) %></td>
     </tr>
 <!-- END_HIGHLIGHT -->
   <% end %>
 
 <!-- START_HIGHLIGHT -->
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+  <tr>
+    <td>Total</td>
+    <td><strong><%= number_to_currency(@cart.total_price) %></strong></td>
   </tr>
 <!-- END_HIGHLIGHT -->
 
@@ -27,8 +28,9 @@
 </table>
 <!-- END_HIGHLIGHT -->
 <br>
-
-<%= link_to image_tag("https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif"), @cart.paypal_url(root_url) %>
+<p><strong>Buy now with PayPal</strong><p/><%= link_to image_tag("https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif"), @cart.paypal_url(root_url) %>
+<p>Clicking the "Buy Now" button will take you to PayPal's site where you can complete your purchase.</p>
+<br>
 
 <br>
 <%= button_to 'Empty cart', @cart, method: :delete,
