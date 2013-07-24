@@ -1,13 +1,8 @@
-<p>
- <strong><%= @shoe.title %></strong>
-</p>
+<div class="row">
+<div class="span6">
 
 <p>
  <%= @shoe.description %>
-</p>
-
-<p>
- <%= image_tag(@shoe.image_url) %>
 </p>
 
 <p>
@@ -19,24 +14,23 @@
   <strong>Store:</strong>
   <%= @store.title %>
 </p>
+</div>
+<div class="span6">
+<p>
+ <%= image_tag(@shoe.image_url) %>
+</p>
+<p>
+ <strong><%= @shoe.title %></strong>
+</p>
+</div>
+</div>
 
 <%= form_for([@store, @shoe]) do |f| %>  
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
+  
   <div class="field">
     <%= f.label :sex %><br>
-    <%= f.select :sex, [['male', 1], ['female', 2]] %>
+    <%= f.select :sex, [['mens', 1], ['womens', 2]] %>
   </div>
 
   <% end %>
