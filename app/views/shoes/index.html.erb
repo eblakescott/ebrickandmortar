@@ -24,13 +24,16 @@
         <td>$<%= shoe.price %></td>
         <td><%= shoe.sex %></td>
         <td><%= link_to 'Select', store_shoe_path(@store, shoe) %></td>
+        <% if admin_signed_in? %>
         <td><%= link_to 'Edit', edit_store_shoe_path(@store, shoe) %></td>
         <td><%= link_to 'Destroy', [@store, shoe], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% end %> 
+     </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if admin_signed_in? %>
 <%= link_to 'New Shoe', new_store_shoe_path(@store) %>
+<% end %>
