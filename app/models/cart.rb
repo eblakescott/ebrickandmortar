@@ -28,7 +28,10 @@ def paypal_url(return_url)
       "amount_#{index+1}" => item.total_price,
       "item_name_#{index+1}" => item.shoe.title,
       "item_number_#{index+1}" => item.id,
-      "quantity_#{index+1}" => item.quantity
+      "quantity_#{index+1}" => item.quantity,
+      "item_color_#{index+1}" => item.shoe.color,
+      "item_size_#{index+1}" => item.shoe.size,
+      "item_width_#{index+1}" => item.shoe.width
     })
   end
   "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
