@@ -7,7 +7,6 @@
 <table class="table">
 <!-- END_HIGHLIGHT -->
   <% @cart.line_items.each do |item| %>
-<!-- START_HIGHLIGHT -->
     <tr>
       <td><%= image_tag(item.shoe.image_url) %></td>
       <td><%= item.quantity %>&times;</td>
@@ -17,7 +16,6 @@
       <td><%= item.shoe.size %></td>
       <td><%= item.shoe.width %></td>
     </tr>
-<!-- END_HIGHLIGHT -->
   <% end %>
 
 <!-- START_HIGHLIGHT -->

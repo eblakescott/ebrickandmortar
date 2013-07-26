@@ -76,7 +76,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shoe_params
-      params.require(:shoe).permit(:title, :description, :image_url, :price, :sex, :store_id)
+      params.require(:shoe).permit(:title, :description, :image_url, :price, :sex, :store_id, :size, :width, :color)
     end
 def set_store
       @store = Store.find(params[:store_id])

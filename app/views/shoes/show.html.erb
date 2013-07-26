@@ -24,25 +24,7 @@
 </p>
 </div>
 </div>
-<h3>Customize your shoe below</h3>
-<%= form_for([@store, @shoe]) do |f| %>  
-  
-<div class="field">
-  <%= f.label :sex %><br>
-  <%= f.select :sex, [['mens', 1], ['womens', 2]] %>
-</div>
-<div class="field">
-  <%= f.label :color %><br>
-  <%= f.select :color, [['blue', 1], ['green', 2]] %>
-</div> 
-<div class="field">
-  <%= f.label :size %><br>
-  <%= f.select :size, [[1], [1.5], [2]] %>
-</div>
-  <div class="field">
-    <%= f.label :width %><br>
-    <%= f.select :width, [['D', 1], ['F', 2]] %>
-  </div>
-<% end %>
 
 <%= button_to 'Add to Cart', line_items_path(shoe_id: @shoe)%>
+
+

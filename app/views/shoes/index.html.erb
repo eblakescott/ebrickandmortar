@@ -22,7 +22,6 @@
         <td><%= shoe.title %></td>
         <td><%= shoe.description %></td>
         <td>$<%= shoe.price %></td>
-        <td><%= shoe.sex %></td>
         <td><%= link_to 'Select', store_shoe_path(@store, shoe) %></td>
         <% if admin_signed_in? %>
         <td><%= link_to 'Edit', edit_store_shoe_path(@store, shoe) %></td>
