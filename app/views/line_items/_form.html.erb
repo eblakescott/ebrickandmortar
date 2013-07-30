@@ -11,9 +11,10 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :product %><br>
-    <%= f.text_field :product %>
+    <%= f.label :shoe %><br>
+    <%= f.text_field :shoe %>
   </div>
   <div class="field">
     <%= f.label :cart %><br>
@@ -23,3 +24,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= button_to 'Add to Cart', line_items_path(shoe_id: @shoe)%>
