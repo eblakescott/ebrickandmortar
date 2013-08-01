@@ -1,3 +1,9 @@
+<% if notice %>
+<div class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<%= button_to 'Add to Cart', line_items_path(shoe_id: @shoe)%>
+
 <div class="row">
 <div class="span6">
 
@@ -30,11 +36,11 @@
   
 <div class="field">
   <%= f.label :sex %><br>
-  <%= f.select :sex, [['mens', 1], ['womens', 2]] %>
+  <%= f.select :sex, [['Mens', 'Mens'], ['Womens', 'Womens']] %>
 </div>
 <div class="field">
   <%= f.label :color %><br>
-  <%= f.select :color, [['blue', 1], ['green', 2]] %>
+  <%= f.select :color, [['Blue', 'Blue'], ['Green', 'Green']] %>
 </div> 
 <div class="field">
   <%= f.label :size %><br>
@@ -42,13 +48,9 @@
 </div>
   <div class="field">
     <%= f.label :width %><br>
-    <%= f.select :width, [['D', 1], ['F', 2]] %>
+    <%= f.select :width, [['D', 'D'], ['F', 'F']] %>
   </div>
 <div class="actions">
     <%= f.submit %>
   </div>
 <% end %> 
-
-<%= button_to 'Add to Cart', line_items_path(shoe_id: @shoe)%>
-
-

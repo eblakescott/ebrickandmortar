@@ -43,7 +43,7 @@
 <p><strong>Buy now with PayPal</strong><p/><%= link_to image_tag("https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif"), @cart.paypal_url(root_url) %>
 <p>Clicking the "Buy Now" button will take you to PayPal's site where you can complete your purchase.</p>
 <br>
-
+<%= link_to 'Back to customize', store_shoe_path(@store, @shoe) %>
 <br>
 <%= button_to 'Empty cart', @cart, method: :delete,
     data: { confirm: 'Are you sure?' } %>

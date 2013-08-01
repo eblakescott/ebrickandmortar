@@ -49,7 +49,7 @@ end
     @shoe = @store.shoes.find(params[:id])
     respond_to do |format|
       if @shoe.update(shoe_params)
-        format.html { redirect_to [@store, @shoe], notice: 'Shoe was successfully updated.' }
+        format.html { redirect_to [@store, @shoe], notice: 'Shoe selections saved. Ready to add your shoes to your shopping cart?' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
