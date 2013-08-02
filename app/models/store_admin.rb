@@ -1,5 +1,4 @@
 class StoreAdmin < ActiveRecord::Base
-  belongs_to :store
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

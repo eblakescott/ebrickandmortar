@@ -37,16 +37,15 @@ ActiveRecord::Schema.define(version: 20130802175256) do
   end
 
   create_table "line_items", force: true do |t|
-    t.integer  "product_id"
     t.integer  "shoe_id"
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_id"
     t.integer  "quantity",   default: 1
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
-  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
   add_index "line_items", ["shoe_id"], name: "index_line_items_on_shoe_id", using: :btree
 
   create_table "orders", force: true do |t|
@@ -56,7 +55,6 @@ ActiveRecord::Schema.define(version: 20130802175256) do
     t.string   "pay_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "credit_card_number"
   end
 
   create_table "pages", force: true do |t|
@@ -64,16 +62,6 @@ ActiveRecord::Schema.define(version: 20130802175256) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "products", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "image_url"
-    t.decimal  "price",       precision: 8, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "store_id"
   end
 
   create_table "shoes", force: true do |t|
