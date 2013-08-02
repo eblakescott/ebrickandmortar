@@ -55,4 +55,15 @@
     </a>
   </li>
 </ul>
+
+<% if store_admin_signed_in? %>
+    Signed in as <%= current_store_admin.email %>. 
+    <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %> | <%=link_to "Edit Store", edit_store_path(@store) %>
+    <% end %>
+
+<br>
+
+<% if admin_signed_in? %>
+   <%= link_to 'Delete This Store', [@store], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
  

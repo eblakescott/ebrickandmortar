@@ -1,5 +1,6 @@
 Ebrickandmortar::Application.routes.draw do
 
+  devise_for :store_admins
   resources :shops
 
   devise_for :admins
