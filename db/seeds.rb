@@ -36,6 +36,3 @@ store = Store.create({title: 'Shedd Aquarium', description: %{The Adler Planetar
 
 #Create an admin account
 Admin.new({ :email => 'ed@ed.com', :password => 'Edward', :password_confirmation => 'Edward'}).save
-
-#Create a store admin account to edit specific stores
-Store_admin.new({ :email => 'mark@mark.com', :password => 'Mark', :password_confirmation => 'Mark'}).save
