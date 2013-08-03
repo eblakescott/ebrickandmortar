@@ -1,5 +1,6 @@
 class Store < ActiveRecord::Base
 has_many :shoes, dependent: :destroy
+belongs_to :store_admin
 attr_accessible :title, :description, :image_url, :address
 
 def self.search(search)

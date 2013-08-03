@@ -27,6 +27,7 @@ class StoresController < ApplicationController
 
   # GET /stores/1/edit
   def edit
+  @store = @store.store_admins.find(params[:id])
   end
 
   # POST /stores
