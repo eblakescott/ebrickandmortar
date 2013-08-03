@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-
+  before_filter :store_admin_owns_store?, only: [:edit, :update, :destroy]
+  
   # GET /stores
   # GET /stores.json
   def index
@@ -27,8 +28,8 @@ class StoresController < ApplicationController
 
   # GET /stores/1/edit
   def edit
-  @store = @store.store_admins.find(params[:id])
-  end
+
+end
 
   # POST /stores
   # POST /stores.json
@@ -80,4 +81,8 @@ class StoresController < ApplicationController
     def store_params
       params.require(:store).permit(:title, :description, :address, :image_url)
     end
+   
+   def store_admin_owns_store?
+  @store.store_admin = current_store_admin
+end
 end
