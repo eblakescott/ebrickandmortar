@@ -11,7 +11,7 @@ Ebrickandmortar::Application.routes.draw do
 
   resources :carts
 
- 
+  resources :charges 
 
   get "shop/index"
   resources :pages
