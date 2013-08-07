@@ -1,1 +1,35 @@
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<div class="container">
+<h2>Thank You! Your order details are below.</h2>
+<table class="table">
+<thead>
+    <tr>
+      <th></th>
+      <th>Quantity</th>
+      <th>Name</th>
+      <th>Total Price</th>
+      <th>Mens or Womens</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th>Width</th>
+    </tr>
+  </thead>
+<!-- END_HIGHLIGHT -->
+  <% @cart.line_items.each do |item| %>
+    <tr>
+      <td><%= image_tag(item.shoe.image_url) %></td>
+      <td><%= item.quantity %>&times;</td>
+      <td><%= item.shoe.title %></td>
+      <td><%= number_to_currency(item.total_price) %></td>
+      <td><%= item.shoe.sex %></td>
+      <td><%= item.shoe.color %></td>
+      <td><%= item.shoe.size %></td>
+      <td><%= item.shoe.width %></td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td>Total</td>
+    <td><strong><%= number_to_currency(@cart.total_price) %></strong></td>
+</tr>
+</table>
+</div>
