@@ -1,12 +1,13 @@
 class ChargesController < ApplicationController
-Stripe.api_key = "sk_test_7g5koDiRpnf7K6RV9EGpuidU"
+
 
 def new
 end
 
 def create
-  # Amount in cents
-  @amount = 500
+@cart = current_cart
+  # Amount in cents. See http://stackoverflow.com/questions/12546643/get-price-in-cents-for-stripe. "to_i" strips decimals from price.
+  @amount = (@cart.total_price * 100).to_i
 
   customer = Stripe::Customer.create(
     :email => 'example@stripe.com',

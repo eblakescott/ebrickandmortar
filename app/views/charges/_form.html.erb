@@ -1,4 +1,4 @@
-<%= form_tag charges_path do %>
+<%= form_for(@charge) do |f| %>
   <% if @charge.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@charge.errors.count, "error") %> prohibited this charge from being saved:</h2>
@@ -9,11 +9,9 @@
       <% end %>
       </ul>
     </div>
-  <% end %> 
+  <% end %>
 
-  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-          data-key="pk_test_xnq5nucYpEcGXsJsm9FaVkfs"
-          data-description="A month's subscription"
-          data-address
-          data-amount="500"></script>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

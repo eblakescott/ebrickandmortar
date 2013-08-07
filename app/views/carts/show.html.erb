@@ -31,23 +31,21 @@
     </tr>
   <% end %>
 
-<!-- START_HIGHLIGHT -->
   <tr>
     <td>Total</td>
     <td><strong><%= number_to_currency(@cart.total_price) %></strong></td>
-  </tr>
-<!-- END_HIGHLIGHT -->
-
-<!-- START_HIGHLIGHT -->
+<td>
+<%= form_tag charges_path do %>
+ 
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="pk_test_xnq5nucYpEcGXsJsm9FaVkfs"
+          data-description=""
+          data-amount=""></script>
+<% end %>
+</td>
+</tr>
 </table>
-<!-- END_HIGHLIGHT -->
-<br>
-<p><strong>Buy now with PayPal</strong><p/><%= link_to image_tag("https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif"), @cart.paypal_url(root_url) %>
-<p>Clicking the "Buy Now" button will take you to PayPal's site where you can complete your purchase.</p>
-<br>
-<%= link_to 'Back to customize', store_shoe_path(@store, @shoe) %>
-<br>
+
 <%= button_to 'Empty cart', @cart, method: :delete,
     data: { confirm: 'Are you sure?' } %>
 <%= link_to "Back", store_path(params[:id]), method: :get %>
-

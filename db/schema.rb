@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803165052) do
+ActiveRecord::Schema.define(version: 20130807200658) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20130803165052) do
     t.datetime "updated_at"
   end
 
+  create_table "charges", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "line_items", force: true do |t|
     t.integer  "shoe_id"
     t.integer  "cart_id"
@@ -43,6 +51,7 @@ ActiveRecord::Schema.define(version: 20130803165052) do
     t.datetime "updated_at"
     t.integer  "order_id"
     t.integer  "quantity",   default: 1
+    t.integer  "charge_id"
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
