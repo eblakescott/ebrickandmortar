@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-
+Stripe.api_key = "sk_test_7g5koDiRpnf7K6RV9EGpuidU"
 
 def new
 end
